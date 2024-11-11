@@ -2,7 +2,7 @@ import "./App.css";
 import Hero from "./Hero";
 import Header from "./Header";
 import Card from "./Card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 
 function App() {
   return (
@@ -120,16 +120,44 @@ function App() {
       </div>
 
       <TextSection title={["Our Working", "Process"]} text={"Step-by-Step Guide to Achieving Your Business Goals"} />
+
+      <div className="mt-[30px] space-y-5">
+        <Step nb={"01"} title={"Consultation"} />
+        <Step nb={"02"} title={"Research and Strategy Development"} />
+        <Step nb={"03"} title={"Implementation"} />
+        <Step nb={"04"} title={"Monitoring and Optimization"} />
+        <Step nb={"05"} title={"Reporting and Communication"} />
+        <Step nb={"06"} title={"Continual Improvement"} />
+      </div>
+
+      <TextSection
+        title={"Team"}
+        text={"Meet the skilled and experienced team behind our successful digital marketing strategies"}
+      />
     </>
   );
 }
 
 export default App;
 
+function Step({ nb, title }) {
+  return (
+    <div className="mx-5 p-[30px] flex h-[98px] justify-between outline outline-1 outline-black rounded-[45px] font-space bg-Grey drop-shadow-[0_5px_0_theme(colors.Dark)]">
+      <div className="flex items-center space-x-[33px]">
+        <div className="text-[30px] font-medium">{nb}</div>
+        <div className="text-h4-mobile font-medium">{title}</div>
+      </div>
+      <button className="outline outline-1 rounded-full p-2">
+        <Plus className="w-5 h-5" />
+      </button>
+    </div>
+  );
+}
+
 function TextSection({ title, text }) {
   return (
     <div className="px-5 mt-[60px] space-y-[30px] flex flex-col justify-center items-center text-center">
-      <div className="text-h2-mobile text-medium text-Black font-space ">
+      <div className="text-h2-mobile text-medium text-Black font-space">
         {Array.isArray(title) ? (
           title.map((line, index) => (
             <div className="bg-Green rounded-[7px] px-2 inline-block" key={index}>
