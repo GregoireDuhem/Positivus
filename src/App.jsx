@@ -2,7 +2,13 @@ import "./App.css";
 import Hero from "./Hero";
 import Header from "./Header";
 import Card from "./Card";
-import { ArrowRight, Plus } from "lucide-react";
+import TextSection from "./TextSection";
+import Step from "./Step";
+import SlideCard from "./SlideCard";
+import Team from "./Team";
+import Testimonial from "./Testimonial";
+import ContactForm from "./ContactForm";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 
 function App() {
   return (
@@ -90,34 +96,7 @@ function App() {
         text={"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"}
       />
 
-      {/* Slide Cards */}
-      <div className="mt-10 gap-5 px-5 w-full flex overflow-x-auto">
-        <div className="h-[252px] w-[350px] flex-shrink-0 rounded-[45px] bg-Dark font-space py-[42px] px-[50px] space-y-5">
-          <div className="text-white text-p-mobile">
-            For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website
-            traffic and a 25% increase in sales.
-          </div>
-          <div className="flex items-center group text-Green text-[20px] cursor-pointer">
-            Learn more
-            <button className="ml-2 group-hover:-rotate-45 transition-all duration-300">
-              <ArrowRight />
-            </button>
-          </div>
-        </div>
-        {/*  */}
-        <div className="h-[252px] w-[350px] flex-shrink-0 rounded-[45px] bg-Dark font-space py-[42px] px-[50px] space-y-5">
-          <div className="text-white text-p-mobile">
-            For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website
-            traffic and a 25% increase in sales.
-          </div>
-          <div className="flex items-center group text-Green text-[20px] cursor-pointer">
-            Learn more
-            <button className="ml-2 group-hover:-rotate-45 transition-all duration-300">
-              <ArrowRight />
-            </button>
-          </div>
-        </div>
-      </div>
+      <SlideCard />
 
       <TextSection title={["Our Working", "Process"]} text={"Step-by-Step Guide to Achieving Your Business Goals"} />
 
@@ -134,41 +113,118 @@ function App() {
         title={"Team"}
         text={"Meet the skilled and experienced team behind our successful digital marketing strategies"}
       />
+
+      <div className="mt-10 px-5 space-y-[30px]">
+        <Team
+          img={"Team1.png"}
+          name={"John Smith"}
+          role={"CEO and Founder"}
+          experience={"10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy"}
+        />
+        <Team
+          img={"Team2.png"}
+          name={"Jane Doe"}
+          role={"Director of Operations"}
+          experience={
+            "7+ years of experience in project management and team leadership. Strong organizational and communication skills"
+          }
+        />
+        <Team
+          img={"Team3.png"}
+          name={"Michael Brown"}
+          role={"Senior SEO Specialist"}
+          experience={
+            "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization"
+          }
+        />
+        <Team
+          img={"Team4.png"}
+          name={"Emily Johnson"}
+          role={"PPC Manager"}
+          experience={
+            "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis"
+          }
+        />
+      </div>
+
+      <div className="px-5 mt-[39px] font-space">
+        <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full font-space text-[20px] rounded-[14px]">
+          See all team
+        </button>
+      </div>
+
+      <TextSection
+        title={"Testimonials"}
+        text={
+          "Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services"
+        }
+      />
+
+      <Testimonial />
+
+      <TextSection title={"Contact Us"} text={"Connect with Us: Let's Discuss Your Digital Marketing Needs"} />
+
+      <ContactForm />
+
+      <Footer />
     </>
   );
 }
 
+function Footer() {
+  return (
+    <div className="mt-[90px] bg-Dark pt-[50px] pb-[30px] px-5 space-y-[37px] font-space ">
+      <div className="flex items-center justify-center">
+        <img className="h-[23px] mr-2" src="IconWhite.png" alt="Icon" />
+        <img className="h-[19px]" src="PositivusWhite.png" alt="Positivus" />
+      </div>
+      <div className="flex flex-col items-center justify-center space-y-[15px] text-white text-p-mobile">
+        <div>About us</div>
+        <div>Services</div>
+        <div>Use Cases</div>
+        <div>Pricing</div>
+      </div>
+      <div className="flex justify-center">
+        <div className="text-Black bg-Green inline-block px-[7px] rounded-[7px]">Contact us:</div>
+      </div>
+
+      <div className="flex flex-col items-center justify-center text-center text-white space-y-[15px] text-p-mobile">
+        <div>Email: info@positivus.com</div>
+        <div>Phone: 555-567-8901</div>
+        <div>Address: 1234 Main St Moonstone City, Stardust State 12345</div>
+      </div>
+
+      <div className="bg-[#292A32] w-full py-[30px] px-[30px] rounded-[14px] space-y-[22px] font-space">
+        <input
+          type="email"
+          placeholder="Email"
+          className="rounded-[14px] bg-white outline outline-1 outline-Black px-[20px] py-[18px] w-full text-p-mobile"
+        />
+        <button className="flex items-center justify-center px-[35px] py-5 bg-Green text-Dark w-full  text-[20px] rounded-[14px]">
+          Subscribe to news
+        </button>
+      </div>
+
+      <div className="flex justify-center space-x-5">
+        <div className="rounded-full p-2 bg-white">
+          <Linkedin />
+        </div>
+        <div className="rounded-full p-2 bg-white">
+          <Facebook />
+        </div>
+        <div className="rounded-full p-2 bg-white">
+          <Twitter />
+        </div>
+      </div>
+
+      <hr className="border-t-1 border-white" />
+
+      <div className="flex flex-col space-y-[15px] items-center justify-center text-white text-p-mobile">
+        <div>© 2023 Positivus. All rights reserved</div>
+        <div>Privacy Policy</div>
+      </div>
+    </div>
+  );
+}
+
 export default App;
-
-function Step({ nb, title }) {
-  return (
-    <div className="mx-5 p-[30px] flex h-[98px] justify-between outline outline-1 outline-black rounded-[45px] font-space bg-Grey drop-shadow-[0_5px_0_theme(colors.Dark)]">
-      <div className="flex items-center space-x-[33px]">
-        <div className="text-[30px] font-medium">{nb}</div>
-        <div className="text-h4-mobile font-medium">{title}</div>
-      </div>
-      <button className="outline outline-1 rounded-full p-2">
-        <Plus className="w-5 h-5" />
-      </button>
-    </div>
-  );
-}
-
-function TextSection({ title, text }) {
-  return (
-    <div className="px-5 mt-[60px] space-y-[30px] flex flex-col justify-center items-center text-center">
-      <div className="text-h2-mobile text-medium text-Black font-space">
-        {Array.isArray(title) ? (
-          title.map((line, index) => (
-            <div className="bg-Green rounded-[7px] px-2 inline-block" key={index}>
-              {line}
-            </div>
-          ))
-        ) : (
-          <span className="bg-Green rounded-[7px] px-2">{title}</span>
-        )}
-      </div>
-      <div className="text-p-mobile text-Black font-space">{text}</div>
-    </div>
-  );
-}
