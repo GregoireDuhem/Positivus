@@ -17,7 +17,7 @@ export default function Card({ Bg, text1, text2, textBg, img, buttonBg }) {
           <button className={`rounded-full ${buttonBg} p-2 group-hover:-rotate-45 transition-all duration-300 `}>
             <ArrowRight className={`${buttonBg === "bg-Grey" ? "text-Dark" : "text-Green"}`} />
           </button>
-          <div className={`${textColor} text-h4 cursor-pointer hidden md:block`}>Learn more</div>
+          <div className={`${textColor} text-h4 cursor-pointer hidden md:block hover:underline`}>Learn more</div>
         </div>
         <img className="md:absolute md:top-[30%] md:right-[50px]" src={img} alt={img} />
       </div>

@@ -83,15 +83,18 @@ function App() {
       </div>
 
       {/* Proposal */}
-      <div className="mt-[70px] mx-5 h-[370px] bg-Grey p-[50px] font-space space-y-5 rounded-[45px]">
-        <div className="text-h3-mobile ">Let’s make things happen</div>
-        <div className="text-p-mobile">
-          Contact us today to learn more about how our digital marketing services can help your business grow and
-          succeed online.
+      <div className="mt-[70px] md:mt-[100px] mx-5 md:mx-[100px] h-[370px] bg-Grey p-[50px] md:px-[60px] font-space rounded-[45px] md:flex md:items-center md:justify-between">
+        <div className="md:w-[40%] space-y-5 md:space-y-[26px]">
+          <div className="text-h3-mobile md:text-h3">Let’s make things happen</div>
+          <div className="text-p-mobile md:text-p">
+            Contact us today to learn more about how our digital marketing services can help your business grow and
+            succeed online.
+          </div>
+          <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full md:w-[60%] font-space text-[20px] rounded-[14px]">
+            Get your proposal
+          </button>
         </div>
-        <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full font-space text-[20px] rounded-[14px]">
-          Get your proposal
-        </button>
+        <img className="hidden md:block w-[550px] relative right-[-50px]" src="Star.png" alt="star" />
       </div>
 
       <TextSection
