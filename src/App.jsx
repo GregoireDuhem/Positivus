@@ -16,19 +16,22 @@ function App() {
       <Header />
       <Hero />
       {/* Logos */}
-      <div className="mt-[60px]">
+      <div className="mt-[60px] md:hidden">
         <img className="grayscale" src="Logos.png" alt="Logos" />
+      </div>
+      <div className="md:mt-[60px] hidden md:flex md:justify-center">
+        <img className="grayscale" src="LogosDesktop.png" alt="Logos" />
       </div>
 
       <TextSection
         title={"Services"}
         text={
-          "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online.These services include:"
+          "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
         }
       />
 
       {/* Cards */}
-      <div className="mt-10 px-5 space-y-[30px]">
+      <div className="mt-10 md:mt-[80px] md:grid md:grid-cols-2 px-5 md:px-[100px] space-y-[30px] md:space-y-0 md:gap-10">
         <Card
           Bg={"bg-Grey"}
           text1={"Search engine"}
@@ -198,7 +201,7 @@ function Footer() {
         <input
           type="email"
           placeholder="Email"
-          className="rounded-[14px] bg-white outline outline-1 outline-Black px-[20px] py-[18px] w-full text-p-mobile"
+          className="rounded-[14px] bg-[#292A32] outline outline-1 outline-white px-[20px] py-[18px] w-full text-p-mobile"
         />
         <button className="flex items-center justify-center px-[35px] py-5 bg-Green text-Dark w-full  text-[20px] rounded-[14px]">
           Subscribe to news
