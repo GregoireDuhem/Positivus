@@ -2,15 +2,18 @@ import { ArrowLeft, ArrowRight, Sparkle } from "lucide-react";
 
 export default function Testimonial() {
   return (
-    <div className="mt-[40px] md:mt-[80px] mx-5 md:mx-[100px] bg-Dark rounded-[45px] pt-[30px] md:pt-[84px] px-[30px] pb-[60px] space-y-[60px] md:space-y-[124px] font-space">
-      <div className="md:flex md:space-x-[50px]">
-        <div className="space-y-[21px] md:w-[50%] md:flex md:flex-col md:mx-auto">
+    <div
+      className="mt-[40px] md:mt-[80px] mx-5 md:mx-[100px] bg-Dark rounded-[45px] pt-[30px] md:pt-[84px] px-[30px] pb-[60px] 
+    space-y-[60px] md:space-y-[124px] font-space overflow-hidden"
+    >
+      <div className="md:flex">
+        <div className="space-y-[21px] md:w-[50%] md:flex md:flex-col md:mx-auto md:transform md:-translate-x-1/2">
           <Card />
         </div>
         <div className="space-y-[21px] md:w-[50%] md:flex-col md:mx-auto hidden md:block">
           <Card />
         </div>
-        <div className="space-y-[21px] md:w-[50%] md:flex-col md:mx-auto hidden md:block">
+        <div className="space-y-[21px] md:w-[50%] md:flex-col md:mx-auto hidden md:block md:transform md:translate-x-1/2">
           <Card />
         </div>
       </div>

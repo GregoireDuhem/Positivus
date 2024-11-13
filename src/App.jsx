@@ -8,7 +8,7 @@ import SlideCard from "./SlideCard";
 import Team from "./Team";
 import Testimonial from "./Testimonial";
 import ContactForm from "./ContactForm";
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -194,62 +194,6 @@ function App() {
 
       <Footer />
     </>
-  );
-}
-
-function Footer() {
-  return (
-    <div className="mt-[90px] bg-Dark pt-[50px] pb-[30px] px-5 space-y-[37px] font-space ">
-      <div className="flex items-center justify-center">
-        <img className="h-[23px] mr-2" src="IconWhite.png" alt="Icon" />
-        <img className="h-[19px]" src="PositivusWhite.png" alt="Positivus" />
-      </div>
-      <div className="flex flex-col items-center justify-center space-y-[15px] text-white text-p-mobile">
-        <div>About us</div>
-        <div>Services</div>
-        <div>Use Cases</div>
-        <div>Pricing</div>
-      </div>
-      <div className="flex justify-center">
-        <div className="text-Black bg-Green inline-block px-[7px] rounded-[7px]">Contact us:</div>
-      </div>
-
-      <div className="flex flex-col items-center justify-center text-center text-white space-y-[15px] text-p-mobile">
-        <div>Email: info@positivus.com</div>
-        <div>Phone: 555-567-8901</div>
-        <div>Address: 1234 Main St Moonstone City, Stardust State 12345</div>
-      </div>
-
-      <div className="bg-[#292A32] w-full py-[30px] px-[30px] rounded-[14px] space-y-[22px] font-space">
-        <input
-          type="email"
-          placeholder="Email"
-          className="rounded-[14px] bg-[#292A32] outline outline-1 outline-white px-[20px] py-[18px] w-full text-p-mobile"
-        />
-        <button className="flex items-center justify-center px-[35px] py-5 bg-Green text-Dark w-full  text-[20px] rounded-[14px]">
-          Subscribe to news
-        </button>
-      </div>
-
-      <div className="flex justify-center space-x-5">
-        <div className="rounded-full p-2 bg-white">
-          <Linkedin />
-        </div>
-        <div className="rounded-full p-2 bg-white">
-          <Facebook />
-        </div>
-        <div className="rounded-full p-2 bg-white">
-          <Twitter />
-        </div>
-      </div>
-
-      <hr className="border-t-1 border-white" />
-
-      <div className="flex flex-col space-y-[15px] items-center justify-center text-white text-p-mobile">
-        <div>© 2023 Positivus. All rights reserved</div>
-        <div>Privacy Policy</div>
-      </div>
-    </div>
   );
 }
 

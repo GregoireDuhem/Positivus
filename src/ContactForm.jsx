@@ -5,8 +5,8 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="mx-5 bg-Grey py-10 rounded-[45px] font-space space-y-[36px] mt-10">
-        <div className="mx-10 flex justify-around">
+      <div className="mx-5 md:mx-[100px] bg-Grey py-10 md:pt-[60px] md:pb-[80px] rounded-[45px] font-space space-y-[36px] mt-10 relative">
+        <div className="mx-10 md:mx-0 md:pl-[100px] flex justify-around md:justify-start md:space-x-5 md:w-1/2">
           <label className="flex items-center">
             <input
               type="radio"
@@ -34,13 +34,21 @@ export default function ContactForm() {
             <span>Get a Quote</span>
           </label>
         </div>
-        <div className="mx-[30px] py-[10px] space-y-5">
+        <div className="mx-[30px] md:mx-0 md:pl-[100px] py-[10px] space-y-5 md:w-1/2">
           <InputField label={"Name"} placeholder={"Name"} />
           <InputField label={"Email"} placeholder={"Email"} required />
           <InputField label={"Message"} placeholder={"Message"} required />
         </div>
+        <div className="px-5 md:px-0 md:pl-[100px] mt-[30px] font-space md:w-1/2">
+          <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full font-space text-[20px] rounded-[14px]">
+            Send Message
+          </button>
+        </div>
+        <div className="hidden md:block absolute top-0 right-6 transform translate-x-1/2">
+          <img className="w-[600px]" src="Form.png" alt="" />
+        </div>
       </div>
-      <div className="px-5 mt-[30px] font-space">
+      <div className="px-5 mt-[30px] font-space md:hidden">
         <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full font-space text-[20px] rounded-[14px]">
           Send Message
         </button>
