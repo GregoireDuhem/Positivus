@@ -2,7 +2,10 @@ import { Linkedin } from "lucide-react";
 
 export default function Team({ img, name, role, experience }) {
   return (
-    <div className="px-[40px] py-[35px] bg-Grey rounded-[45px] h-[294px] space-y-5 font-space text-Black">
+    <div
+      className="px-[40px] py-[35px] bg-white rounded-[45px] h-[294px] md:h-auto space-y-5 font-space text-Black
+    outline outline-1 outline-black drop-shadow-[0_5px_0_theme(colors.Dark)]"
+    >
       <div className="relative flex items-end space-x-5">
         <img src={img} alt={img} />
         <div>

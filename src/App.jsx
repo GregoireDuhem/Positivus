@@ -106,7 +106,7 @@ function App() {
 
       <TextSection title={["Our Working", "Process"]} text={"Step-by-Step Guide to Achieving Your Business Goals"} />
 
-      <div className="mt-[30px] space-y-5">
+      <div className="mt-[30px] md:mt-[80px] space-y-5 md:space-y-[30px]">
         <Step nb={"01"} title={"Consultation"} />
         <Step nb={"02"} title={"Research and Strategy Development"} />
         <Step nb={"03"} title={"Implementation"} />
@@ -120,7 +120,7 @@ function App() {
         text={"Meet the skilled and experienced team behind our successful digital marketing strategies"}
       />
 
-      <div className="mt-10 px-5 space-y-[30px]">
+      <div className="mt-10 md:mt-[80px] px-5 md:px-[100px] space-y-[30px] md:space-y-0 md:grid md:grid-cols-3 md:gap-10">
         <Team
           img={"Team1.png"}
           name={"John Smith"}
@@ -151,10 +151,30 @@ function App() {
             "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis"
           }
         />
+        <div className="hidden md:block">
+          <Team
+            img={"Team4.png"}
+            name={"Brian Williams"}
+            role={"Social Media Specialist"}
+            experience={
+              "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement"
+            }
+          />
+        </div>
+        <div className="hidden md:block">
+          <Team
+            img={"Team4.png"}
+            name={"Sarah Kim"}
+            role={"Content Creator"}
+            experience={
+              "2+ years of experience in writing and editing. Skilled in creating compelling, SEO-optimized content for various industries"
+            }
+          />
+        </div>
       </div>
 
-      <div className="px-5 mt-[39px] font-space">
-        <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full font-space text-[20px] rounded-[14px]">
+      <div className="px-5 md:px-[100px] mt-[39px] md:mt-[40px] font-space md:flex md:justify-end">
+        <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full md:w-[22%] font-space text-[20px] rounded-[14px]">
           See all team
         </button>
       </div>
