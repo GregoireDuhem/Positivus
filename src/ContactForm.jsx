@@ -7,7 +7,7 @@ export default function ContactForm() {
     <>
       <div className="mx-5 md:mx-[100px] bg-Grey py-10 md:pt-[60px] md:pb-[80px] rounded-[45px] font-space space-y-[36px] mt-10 relative">
         <div className="mx-10 md:mx-0 md:pl-[100px] flex justify-around md:justify-start md:space-x-5 md:w-1/2">
-          <label className="flex items-center">
+          <label className="flex items-center cursor-pointer">
             <input
               type="radio"
               name="contactType"
@@ -20,7 +20,7 @@ export default function ContactForm() {
             </div>
             <span>Say Hi</span>
           </label>
-          <label className="flex items-center">
+          <label className="flex items-center cursor-pointer">
             <input
               type="radio"
               name="contactType"
@@ -40,7 +40,10 @@ export default function ContactForm() {
           <InputField label={"Message"} placeholder={"Message"} required />
         </div>
         <div className="px-5 md:px-0 md:pl-[100px] mt-[30px] font-space md:w-1/2">
-          <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full font-space text-[20px] rounded-[14px]">
+          <button
+            className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey hover:bg-transparent hover:text-Dark hover:outline hover:outline-1 hover:outline-Dark
+           transition-all duration-300 w-full font-space text-[20px] rounded-[14px]"
+          >
             Send Message
           </button>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useState } from "react";
 import "./App.css";
 import Hero from "./Hero";
 import Header from "./Header";
@@ -10,10 +10,58 @@ import Team from "./Team";
 import Testimonial from "./Testimonial";
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
+import Carousel from "./Carousel";
 
-import { gsap } from "gsap";
+import { useLenis } from "./useLenis";
 
 function App() {
+  const [openStep, setOpenStep] = useState(null);
+
+  useLenis();
+
+  const toggleStep = (index) => {
+    setOpenStep(openStep === index ? null : index);
+  };
+
+  const steps = [
+    {
+      nb: "01",
+      title: "Consultation",
+      description:
+        "During the initial consultation, we take the time to understand your business goals, challenges, and vision. We'll have an in-depth discussion about your target audience, competitors, and current marketing strategies. This step is crucial to align our approach with your objectives and identify key opportunities for growth. By the end of this session, you'll have a clear roadmap outlining our recommended strategies tailored to your needs.",
+    },
+    {
+      nb: "02",
+      title: "Research and Strategy Development",
+      description:
+        "Our team conducts thorough research to gather insights into your industry, competitors, and customer behavior. We analyze market trends, keywords, and the competitive landscape to build a robust strategy. This process includes defining KPIs, identifying the best channels for your brand, and creating a strategic plan that ensures maximum impact. The goal is to establish a solid foundation for your marketing campaign, optimizing for both short-term wins and long-term success.",
+    },
+    {
+      nb: "03",
+      title: "Implementation",
+      description:
+        "With a clear strategy in place, we move into the implementation phase. Our experts handle everything from setting up campaigns, designing creatives, and optimizing your digital assets. This involves crafting engaging content, optimizing your website, launching social media and PPC campaigns, and integrating tracking tools. Our team ensures that all elements are aligned with your brand and optimized for conversion, ensuring the campaign's effectiveness from day one.",
+    },
+    {
+      nb: "04",
+      title: "Monitoring and Optimization",
+      description:
+        "Our work doesn’t stop once the campaigns are launched. We continuously monitor performance metrics, analyze data, and adjust strategies in real-time to ensure optimal results. This includes A/B testing, adjusting bids, refining ad copy, and optimizing landing pages to maximize conversion rates. By leveraging analytics, we ensure that every dollar you invest is working as efficiently as possible to drive your business objectives forward.",
+    },
+    {
+      nb: "05",
+      title: "Reporting and Communication",
+      description:
+        "Transparency is key to our partnership. We provide regular, detailed reports that outline the progress of your campaigns, highlight key metrics, and provide insights into what's working. Our team will schedule regular meetings to discuss these reports, address any questions you may have, and refine our strategies based on the data. You'll always have a clear view of your campaign performance and ROI, ensuring that you stay informed every step of the way.",
+    },
+    {
+      nb: "06",
+      title: "Continual Improvement",
+      description:
+        "Digital marketing is an ongoing process, and we are committed to helping you grow over time. After analyzing the results of our campaigns, we identify areas for improvement and develop strategies to build on your successes. This phase includes scaling successful campaigns, exploring new channels, and leveraging emerging technologies. Our goal is to create a sustainable, long-term growth strategy that keeps your brand ahead of the competition.",
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -88,7 +136,7 @@ function App() {
             Contact us today to learn more about how our digital marketing services can help your business grow and
             succeed online.
           </div>
-          <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey w-full md:w-[60%] font-space text-[20px] rounded-[14px]">
+          <button className="flex items-center justify-center px-[35px] py-5 bg-Dark text-Grey hover:bg-transparent hover:text-Dark hover:outline hover:outline-1 hover:outline-Dark transition-all duration-300 w-full md:w-[60%] font-space text-[20px] rounded-[14px]">
             Get your proposal
           </button>
         </div>
@@ -105,12 +153,16 @@ function App() {
       <TextSection title={["Our Working", "Process"]} text={"Step-by-Step Guide to Achieving Your Business Goals"} />
 
       <div className="mt-[30px] md:mt-[80px] space-y-5 md:space-y-[30px]">
-        <Step nb={"01"} title={"Consultation"} />
-        <Step nb={"02"} title={"Research and Strategy Development"} />
-        <Step nb={"03"} title={"Implementation"} />
-        <Step nb={"04"} title={"Monitoring and Optimization"} />
-        <Step nb={"05"} title={"Reporting and Communication"} />
-        <Step nb={"06"} title={"Continual Improvement"} />
+        {steps.map((step, index) => (
+          <Step
+            key={index}
+            nb={step.nb}
+            title={step.title}
+            description={step.description}
+            isOpen={openStep === index}
+            onClick={() => toggleStep(index)}
+          />
+        ))}
       </div>
 
       <TextSection
@@ -196,94 +248,3 @@ function App() {
 }
 
 export default App;
-
-function Carousel() {
-  const images1 = ["Amazon.png", "Dribbble.png", "Hubspot.png"];
-  const images2 = ["Notion.png", "Netflix.png", "Zoom.png"];
-  const desktopImages = ["Amazon.png", "Dribbble.png", "Hubspot.png", "Notion.png", "Netflix.png", "Zoom.png"];
-
-  const mobileCarousel1Ref = useRef(null);
-  const mobileCarousel2Ref = useRef(null);
-  const desktopCarouselRef = useRef(null);
-
-  // Function to create infinite scroll using GSAP timeline
-  const createInfiniteScroll = (carouselRef, speed, direction = "left") => {
-    const carousel = carouselRef.current;
-    const items = carousel.children;
-
-    // Calculate total width of all items including spacing
-    const totalWidth = Array.from(items).reduce(
-      (acc, item) => acc + item.offsetWidth + parseFloat(getComputedStyle(item).marginRight),
-      0
-    );
-
-    const timeline = gsap.timeline({ repeat: -1, ease: "none" });
-    timeline.to(carousel, {
-      x: direction === "left" ? -totalWidth : totalWidth,
-      duration: speed,
-      ease: "none",
-      onComplete: () => {
-        carousel.style.transform = "translateX(0)"; // Reset position after scroll
-        timeline.restart();
-      },
-    });
-  };
-
-  useEffect(() => {
-    // Mobile Carousels
-    createInfiniteScroll(mobileCarousel1Ref, 15, "left");
-    createInfiniteScroll(mobileCarousel2Ref, 15, "right");
-
-    // Desktop Carousel
-    createInfiniteScroll(desktopCarouselRef, 20, "left");
-  }, []);
-
-  return (
-    <>
-      {/* Mobile Carousels */}
-      <div className="mt-10 md:hidden space-y-5">
-        {/* Carousel 1 */}
-        <div className="overflow-hidden">
-          <div ref={mobileCarousel1Ref} className="flex space-x-5">
-            {[...images1, ...images1].map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt=""
-                className="w-auto h-[48px] grayscale hover:grayscale-0 transition-all duration-300"
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Carousel 2 */}
-        <div className="overflow-hidden">
-          <div ref={mobileCarousel2Ref} className="flex space-x-5">
-            {[...images2, ...images2].map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt=""
-                className="w-auto h-[48px] grayscale hover:grayscale-0 transition-all duration-300"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Desktop Carousel */}
-      <div className="hidden md:flex overflow-hidden mt-[70px]">
-        <div ref={desktopCarouselRef} className="flex space-x-[10vw]">
-          {[...desktopImages, ...desktopImages].map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt=""
-              className="w-auto h-[48px] grayscale hover:grayscale-0 transition-all duration-300"
-            />
-          ))}
-        </div>
-      </div>
-    </>
-  );
-}
