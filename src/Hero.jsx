@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <>
-      <div className="md:flex md:justify-between md:px-[100px] md:mt-[70px]">
+      <div className="md:flex md:justify-between md:px-[100px] md:mt-[70px] pb-10">
         <div className="md:w-[40%] md:space-y-[35px]">
           <div className="px-5 md:px-0 mt-10  text-h1-mobile md:text-h1 font-space font-medium text-Black ">
             Navigating the digital landscape for success
