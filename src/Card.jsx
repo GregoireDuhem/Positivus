@@ -9,7 +9,8 @@ export default function Card({ Bg, text1, text2, textBg, img, buttonBg }) {
         drop-shadow-[0_5px_0_theme(colors.Dark)] md:relative`}
     >
       <div className="">
-        <div className={`${textBg} font-space rounded-[7px] px-2 md:text-h3`}>{text1}</div>
+        <div className={`${textBg} font-space inline-block rounded-[7px] px-2 md:text-h3`}>{text1}</div>
+        <br />
         <div className={`${textBg} font-space inline-block rounded-[7px] px-2 md:text-h3`}>{text2}</div>
       </div>
       <div className="flex justify-between items-end ">
