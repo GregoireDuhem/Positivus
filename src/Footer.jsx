@@ -49,7 +49,7 @@ export default function Footer() {
           <input
             type="email"
             placeholder="Email"
-            className="rounded-[14px] bg-[#292A32] outline outline-1 outline-white px-[20px] py-[18px] w-full text-p-mobile md:h-[68px]"
+            className="rounded-[14px] bg-[#292A32] outline outline-1 outline-white text-white px-[20px] py-[18px] w-full text-p-mobile md:h-[68px]"
           />
           <button className="flex items-center justify-center px-[35px] py-5 bg-Green text-Dark w-full text-[20px] rounded-[14px] md:h-[68px]">
             Subscribe to news
@@ -64,7 +64,7 @@ export default function Footer() {
         <input
           type="email"
           placeholder="Email"
-          className="rounded-[14px] bg-[#292A32] outline outline-1 outline-white px-[20px] py-[18px] w-full text-p-mobile"
+          className="rounded-[14px] bg-[#292A32] outline outline-1 outline-white text-white px-[20px] py-[18px] w-full text-p-mobile"
         />
         <button className="flex items-center justify-center px-[35px] py-5 bg-Green text-Dark w-full  text-[20px] rounded-[14px]">
           Subscribe to news

@@ -170,6 +170,7 @@ function App() {
         text={"Meet the skilled and experienced team behind our successful digital marketing strategies"}
       />
 
+      {/* Team */}
       <div className="mt-10 md:mt-[80px] px-5 md:px-[100px] space-y-[30px] md:space-y-0 md:grid md:grid-cols-3 md:gap-10">
         <Team
           img={"Team1.png"}
