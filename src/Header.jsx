@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const links = document.querySelectorAll(".nav-link");
 
@@ -29,9 +31,23 @@ export default function Header() {
         />
         <img className="h-[19px] md:w-[171px] md:h-auto" src="Positivus.png" alt="Positivus" />
       </div>
-      <div className="md:hidden">
-        <Menu />
+      <div className="md:hidden transition-all duration-300" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <X className="" /> : <Menu />}
       </div>
+
+      {menuOpen && (
+        <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
+          <ul>
+            {["About us", "Services", "Use Cases", "Pricing", "Blog"].map((text, index) => (
+              <li className="text-black text-[40px] text-center py-[20px]">
+                <a href="#" onClick={() => setMenuOpen(false)}>
+                  {text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* Desktop Navigation with GSAP Animation */}
       <div className="hidden md:flex gap-10 items-center">
